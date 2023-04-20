@@ -1,4 +1,4 @@
-# task-manager
+# Task Manager
 
 ## Что умеет делать приложение
 
