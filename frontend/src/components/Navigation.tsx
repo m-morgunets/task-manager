@@ -5,16 +5,16 @@ import { NavLink } from "react-router-dom";
 const Navigation: FC = () => {
 	// Массив пунктов навигации
 	const arrayLinks = [
-		{ title: "Мои задачи", link: "/" },
-		{ title: "Выполненные", link: "/completed" },
-		{ title: "Важные", link: "/important" },
+		{ id: 1, title: "Мои задачи", link: "/" },
+		{ id: 2, title: "Выполненные", link: "/completed" },
+		{ id: 3, title: "Важные", link: "/important" },
 	];
 
 	return (
 		<ul>
 			{/* Перебор массива элементов навигации */}
 			{arrayLinks.map((item) => (
-				<li className="text-xl mb-4">
+				<li key={item.id} className="text-xl mb-4">
 					{/* NavLink используется для навигации по SPA приложению (является частью react-router-dom) */}
 					<NavLink
 						// isActive имеет значение true, если открыта страница на которую введёт текущая ссылка

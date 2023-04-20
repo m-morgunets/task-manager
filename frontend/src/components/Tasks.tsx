@@ -22,7 +22,8 @@ const Tasks: FC<TasksProps> = ({ tasks }) => {
 	return (
 		<ul className="mt-5">
 			{tasks.map((item) => (
-				<li
+				<li 
+					key={item.id}
 					className={`group/item flex items-center 
 					${item.isImportant && !item.isCompleted ? "text-orange-600 font-bold" : ""} 
 					${item.isCompleted ? "line-through text-gray-400" : ""}`}

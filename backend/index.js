@@ -1,11 +1,9 @@
-require("dotenv").config();
-
 const express = require("express");
 const cors = require("cors");
 const router = require("./router");
 const errorMiddlewares = require("./middlewares/error-middlewares");
 
-const PORT = process.env.PORT || 5000; // Указание порта сервера
+const PORT = 5000; // Указание порта сервера
 const app = express(); // Создание экспресс-приложения
 
 app.use(express.json({ extended: true }));
@@ -13,7 +11,7 @@ app.use(express.json({ extended: true }));
 app.use(
 	cors({
 		credentials: true,
-		origin: process.env.CLIENT_URL,
+		origin: "http://localhost",
 	})
 );
 // Указание роутеров

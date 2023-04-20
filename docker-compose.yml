@@ -1,0 +1,13 @@
+version: "3.4"
+
+services:
+  backend:
+    container_name: todo-backend
+    build: ./backend
+    ports:
+      - "5000:5000"
+  frontend:
+    container_name: todo-frontend
+    build: ./frontend
+    ports:
+      - 80:80
