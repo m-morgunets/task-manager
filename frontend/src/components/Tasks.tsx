@@ -36,10 +36,7 @@ const Tasks: FC<TasksProps> = ({ tasks }) => {
 					/>
 
 					{/* Вывод текста задачи */}
-					<label
-						className="pl-3 w-full cursor-pointer"
-						htmlFor={String(item.id)}
-					>
+					<label className="pl-3 w-full cursor-pointer" htmlFor={String(item.id)}>
 						{item.text}
 					</label>
 

@@ -5,10 +5,12 @@ import { useAppSelector } from "./hooks/useAppSelector";
 import { Routes, Route, Navigate } from "react-router-dom";
 import Navigation from "./components/Navigation";
 import InputAddTask from "./components/InputAddTask";
+import { useLoadingDelay } from "./hooks/useLoadingDelay";
+import Loader from "./components/Loader";
 
 const App = () => {
 	// Получение данных из store-а
-	const {numberTasks, tasks} = useAppSelector((store) => store);
+	const { numberTasks, tasks, isLoading } = useAppSelector((store) => store);
 
 	// Получение экшенов из store-а
 	const { getTasks } = useActions();
@@ -59,7 +61,8 @@ const App = () => {
 							{/* Если введена ссылка на несуществующую страницу, то произойдёт редирект на главную страницу */}
 							<Route path="*" element={<Navigate to={"/"} />} />
 						</Routes>
-						
+
+						{useLoadingDelay(isLoading) && <div className="inline-block relative left-1/2 translate-x-[-50%]"><Loader /></div>}
 					</div>
 				</div>
 			</div>

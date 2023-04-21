@@ -27,7 +27,7 @@ export const tasksReducer = (
 
 		// Используется для записи текущего количества страниц
 		case TasksActionTypes.SET_NUMBER_TASKS:
-			return {...state, numberTasks: action.payload}
+			return { ...state, numberTasks: action.payload };
 
 		default:
 			return state;

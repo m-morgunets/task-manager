@@ -33,9 +33,7 @@ const InputAddTask: FC = () => {
 			<button
 				onClick={() => addTaskFunc(inputTask)}
 				className="ml-10 min-w-[40px] w-[40px] h-[40px] bg-orange-600 rounded-lg font-medium text-white text-2xl"
-			>
-				+
-			</button>
+			>+</button>
 		</div>
 	);
 };
