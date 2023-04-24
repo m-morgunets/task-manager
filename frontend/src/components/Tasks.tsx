@@ -15,13 +15,13 @@ const Tasks: FC<TasksProps> = ({ tasks }) => {
 	// Измненение значения количества задач на текущей странице 
 	// В качестве зависимости передано количество задач на текущей странцие 
 	useEffect(() => {
-		setNumberTasks(tasks.length);
-	}, [tasks.length])
+		setNumberTasks(tasks?.length);
+	}, [tasks?.length])
 	
 
 	return (
 		<ul className="mt-5">
-			{tasks.map((item) => (
+			{tasks?.map((item) => (
 				<li 
 					key={item.id}
 					className={`group/item flex items-center 

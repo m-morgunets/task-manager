@@ -48,15 +48,15 @@ const App = () => {
 						<Routes>
 							<Route
 								path="/"
-								element={ <Tasks tasks={tasks.filter((item) => item.isCompleted === false)} /> }
+								element={ <Tasks tasks={tasks?.filter((item) => item.isCompleted === false)} /> }
 							/>
 							<Route
 								path="/completed"
-								element={ <Tasks tasks={tasks.filter((item) => item.isCompleted === true)} /> }
+								element={ <Tasks tasks={tasks?.filter((item) => item.isCompleted === true)} /> }
 							/>
 							<Route
 								path="/important"
-								element={ <Tasks tasks={tasks.filter((item) => item.isImportant === true && item.isCompleted !== true)} /> }
+								element={ <Tasks tasks={tasks?.filter((item) => item.isImportant === true && item.isCompleted !== true)} /> }
 							/>
 							{/* Если введена ссылка на несуществующую страницу, то произойдёт редирект на главную страницу */}
 							<Route path="*" element={<Navigate to={"/"} />} />
